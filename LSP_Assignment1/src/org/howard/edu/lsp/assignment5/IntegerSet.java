@@ -68,7 +68,7 @@ public class IntegerSet {
 			if (set.get(i)> largest) {
 				largest = set.get(i);}}
 		return largest;
-	}; 
+	};  
 
 /**
  * This method creates a local variable, smallest, and iterates through the set replacing the variable if there is a smaller element.

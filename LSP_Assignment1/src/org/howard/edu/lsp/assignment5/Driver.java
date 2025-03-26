@@ -58,7 +58,7 @@ public class Driver {
 		IntegerSet set3 = new IntegerSet();
 		set3.add(4);
 		set3.add(5);
-		set3.add(6);
+		set3.add(6); 
 
 //test intersection method
 		System.out.println("Intersection of Set2 and Set3 Test");
