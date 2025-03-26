@@ -5,18 +5,24 @@ public class Driver {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-// Intilizes first set and adds elements
+// Initializes first set and adds elements
 		IntegerSet set1 = new IntegerSet();
 		set1.add(1);
 		set1.add(2);
 		set1.add(3);
-//Tests the toString, length, smallest, and largest methods.
+//Tests toString, add and ensures no duplicates
 		System.out.println("Value of Set1 is: "+ set1.toString());
-		System.out.println("Length of Set1 is " + set1.length());
+		set1.add(3);
+		System.out.println("Int 3 is added to set again. This is the result: "+ set1.toString());
+		System.out.println();
+
+		
+//Tests the length, smallest, and largest methods.
+		System.out.println("Length of Set1 is: " + set1.length());
 		System.out.println("Smallest value in Set1 is: " + set1.smallest());
 		System.out.println("Largest value in Set1 is: " + set1.largest());
 		System.out.println();
-//intializes second set
+//Initializes second set
 		IntegerSet set2 = new IntegerSet();
 		set2.add(3);
 		set2.add(4);
@@ -73,6 +79,8 @@ public class Driver {
 		
 //tests equals
 		System.out.println("Equals method Test");
+		System.out.println("Current Value of Set2 is: " + set2.toString());
+		System.out.println("Value of Set3 is: " + set3.toString());
 		System.out.println("The statement 'Set3 equals Set 2' is "+ set2.equals(set3));
 		System.out.println();
 		
@@ -88,8 +96,10 @@ public class Driver {
 		System.out.println();
 		
 //tests clear and isempty
+		System.out.println("Value of Set1 is: "+ set1.toString());
 		set1.clear();
-		System.out.println(" The statement 'Set1 is cleared' is "+ set1.isEmpty());
+		System.out.println("The statement 'Set1 is cleared' is "+ set1.isEmpty());
+		System.out.println("Value of Set1 is: "+ set1.toString());
 
 	}
 
