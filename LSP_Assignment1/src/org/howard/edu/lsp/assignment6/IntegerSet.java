@@ -77,7 +77,7 @@ public class IntegerSet {
 		if (set.size() == 0) {
 			throw new IntegerSetException("Set is Empty Set. Cannot define largest element.");
 		}
-		int largest = 0;
+		int largest = Integer.MIN_VALUE;
 		for (int i = 0; i < set.size(); i++) {
 			if (set.get(i)> largest) {
 				largest = set.get(i);}}

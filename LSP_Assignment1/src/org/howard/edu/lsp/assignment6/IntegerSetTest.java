@@ -162,6 +162,8 @@ class IntegerSetTest {
 		assertEquals(set2.largest(), 5);
 		Throwable exception = assertThrows(IntegerSetException.class, ()->set3.largest());
 		assertEquals("Set is Empty Set. Cannot define largest element.", exception.getMessage());
+		set3.add(-3);
+		assertEquals(set3.largest(), -3);
 		
 	}
 	
@@ -174,8 +176,10 @@ class IntegerSetTest {
 	public void testSmallest() throws IntegerSetException {
 		assertEquals(set1.smallest(), 1);
 		assertEquals(set2.smallest(), 3);
-		Throwable exception = assertThrows(IntegerSetException.class, ()->set3.largest());
-		assertEquals("Set is Empty Set. Cannot define largest element.", exception.getMessage());
+		set2.add(-12457);
+		assertEquals(set2.smallest(), -12457);
+		Throwable exception = assertThrows(IntegerSetException.class, ()->set3.smallest());
+		assertEquals("Set is Empty Set. Cannot define smallest element.", exception.getMessage());
 	}
 
 }
