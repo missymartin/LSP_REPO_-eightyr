@@ -27,7 +27,7 @@ public class IntegerSet {
 
 	
 /** This empties the set. there is no output as it should be a clear array. clear is already a built in function so it is utilized here
- * 
+ *   
  */
 	// Clears the internal representation of the set. 5 pts.
 	public void clear() 

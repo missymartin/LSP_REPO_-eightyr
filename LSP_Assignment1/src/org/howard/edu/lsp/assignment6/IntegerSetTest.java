@@ -18,7 +18,7 @@ class IntegerSetTest {
 	private IntegerSet set3;
 
 	@BeforeEach
-	void setUp(TestInfo testInfo){
+	void setUp(TestInfo testInfo) {
 			ArrayList<Integer> preset1 = new ArrayList<Integer>();
 			preset1.add(1);
 			preset1.add(2);

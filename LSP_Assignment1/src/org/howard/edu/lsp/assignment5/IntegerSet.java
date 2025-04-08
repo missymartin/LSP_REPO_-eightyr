@@ -2,16 +2,23 @@ package org.howard.edu.lsp.assignment5;
 import java.util.List;
 import java.util.ArrayList ;
 
-
+/**
+ * Creation of the Integer Set class
+ */
 public class IntegerSet {
 	// Store the set elements in an ArrayList.
 	private List<Integer> set = new ArrayList<Integer>();
 
-	// Default Constructor
+	/**
+	 *  Default Constructor
+	 */
 	public IntegerSet() {
 	}
 
-	// Constructor if you want to pass in already initialized
+	/**
+	 * Constructor if you want to pass in already initialized
+	 * @param set, this is a set intialized outside of the class
+	 */
 	public IntegerSet(ArrayList<Integer> set) {
 		this.set = set;
 	}
@@ -49,8 +56,8 @@ public class IntegerSet {
 	
 /**
  * This uses the array list contains method. if the int passed in is in the set it return true, otherwise, false.
- * @param value
- * @return
+ * @param value, the is an integer passed in to be compared to the set
+ * @return boolean, it returns a true or false
  */
 	// Returns true if the set contains the value, otherwise false. 5 pts.
 	public boolean contains(int value) {
@@ -96,7 +103,7 @@ public class IntegerSet {
  	
  	/**
  	 * This uses the .indexOf method to find the index of passed in item then remove the item at that index.
- 	 * @param item
+ 	 * @param item, item is the element wanted to remove
  	 */
 
 	// Removes an item from the set or does nothing if not there. 5 pts.
@@ -106,7 +113,7 @@ public class IntegerSet {
 
  	/**
  	 * This checks if the elements are in the set already, if not it adds the element into the set. 
- 	 * @param intSetb
+ 	 * @param intSetb, this is an instance of the IntgerSet that is to be combined with set
  	 */
  	// Set union. 11 pts.
  	public void union(IntegerSet intSetb) {
@@ -148,7 +155,7 @@ public class IntegerSet {
  	/**
  	 * This method changes the IntSetb's .set. Once it iterates through removing the similar items, the intSetb set is switches to display the complement
  	 * It only increases the index if there isn't a removal up to the set's length
- 	 * @param intSetb
+ 	 * @param intSetb, this is a new instance of IntegerSet, so it has access to all methods defined in this class
  	 */
  	// Set complement, all elements not in s1. 11 pts.
  	public void complement(IntegerSet intSetb) {
