@@ -25,6 +25,15 @@ public class ShoppingCart {
         items.put(itemName, price);
     }
 
+    public void removeItem(String itemName) {
+        if (items.containsKey(itemName)) {
+        	items.remove(itemName);
+        }
+        else{
+        throw new IllegalArgumentException("Item does not exist.");
+        }
+    }
+    
     /**
      * Calculates and returns the total cost of the cart,
      * applying any discounts currently in effect.

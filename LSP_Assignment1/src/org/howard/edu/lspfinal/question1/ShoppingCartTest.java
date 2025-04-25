@@ -35,6 +35,21 @@ class ShoppingCartTest {
 	}
 	
 	@Test
+	@DisplayName("Test remove items.")
+	public void testRemoveItem() {
+		//full cart
+		cart1.removeItem("Apple");
+		assertEquals(cart1.getTotalCost(),2.0);
+		//empty cart
+		Throwable exception = assertThrows( IllegalArgumentException.class, ()->cart2.removeItem("Apple"));
+		assertEquals("Item does not exist.", exception.getMessage());
+		//not in cart
+		
+		Throwable exception2 = assertThrows( IllegalArgumentException.class, ()->cart1.removeItem("Avacado"));
+		assertEquals("Item does not exist.", exception2.getMessage());;
+	}
+	
+	@Test
 	@DisplayName("Test applying discount codes.")
 	public void testDiscountCode() {
 		//SAVE10
