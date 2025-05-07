@@ -24,6 +24,7 @@ public class VotingMachineTest {
 
         // Displaying results
         System.out.println("Winner: " + vm.getWinner());
+       
 	}
 
 }
