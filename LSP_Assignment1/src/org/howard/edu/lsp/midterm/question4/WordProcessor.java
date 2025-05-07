@@ -1,6 +1,6 @@
 package org.howard.edu.lsp.midterm.question4;
 
-import java.util.List;
+import java.util.*;
 import java.util.Map;
 
 public class WordProcessor {
@@ -20,6 +20,9 @@ public class WordProcessor {
 	    public WordProcessor(String sentence) { 
 	    	this.sentence = sentence;
 	    	this.sentenceWords = sentence.split("\\s+");
+	    	this.wordMap = new HashMap<>(); // Initialize wordMap
+	    	this.longestWords = new ArrayList<>(); // Initialize longestWords
+
 	    	this.wordAnalyzer();
 	    }
 	    
@@ -41,9 +44,9 @@ public class WordProcessor {
 	     */
 	    // Method to find all longest words in the sentence
 	    public List<String> findLongestWords(){
-	    	for (Map.Entry<String, Integer> entry : wordMap.entrySet()){
-	    		if (entry.getValue().equals(maxWordlength)) {
-	    			longestWords.add(entry.getKey());
+	    	for (String word: this.sentenceWords){
+	    		if (wordMap.get(word).equals(maxWordlength)) {
+	    			longestWords.add(word);
 	    		}
 	    	}
 	    	return longestWords;
