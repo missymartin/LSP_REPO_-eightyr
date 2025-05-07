@@ -8,11 +8,9 @@ public class TaskManager {
 	
 	private HashMap<String, Task> taskMap;
 	
-	public static void main(String[] args) {
-		
-	HashMap<String, Task> taskMap = new HashMap<String, Task>();
+	public TaskManager() {
+		this.taskMap = new HashMap<String, Task>();
 	}
-	
 	/**
 	 *  This uses a hash map to keep the task information together. the value is a taskInfo class.
 	 * @param taskName this is the key value in the map
@@ -23,7 +21,7 @@ public class TaskManager {
 	public void addTask(String taskName, int priority, String status) throws DuplicateTaskException{
 		//add new task no duplicates
 		if (taskMap.containsKey(taskName)) {
-			throw new DuplicateTaskException(" Task" + taskName+ "already exists");
+			throw new DuplicateTaskException(" Task " + taskName+ " already exists");
 		}
 		else {
 			Task task = new Task(taskName,status, priority);
@@ -37,12 +35,12 @@ public class TaskManager {
 		 * @throws TaskNotFoundException this is thrown if the task does not exist in the map
 		 */
 	public Task getTaskByName(String taskName) throws TaskNotFoundException{
-		if (taskMap.containsValue(taskName)) {
+		if (taskMap.containsKey(taskName)) {
 			Task task = taskMap.get(taskName);
 			return task;
 			}
 		else {
-			 throw new TaskNotFoundException(" Task" + taskName+ "not found");
+			 throw new TaskNotFoundException(" Task " + taskName+ " not found");
 		}
 		
 	};
@@ -60,7 +58,7 @@ public class TaskManager {
 			}
 		}
 		else {
-			throw new TaskNotFoundException(" Task" + taskName+ "not found");
+			throw new TaskNotFoundException(" Task " + taskName+ " not found");
 		}
 	
 		
@@ -68,7 +66,7 @@ public class TaskManager {
 	
 	/**
 	 * I used chatGPT to help with this one. It creates a new map that organizes it by status. It itteratis through the task map
-	 * then itteraties throw the new map to print out all of the tasks with the status header.
+	 * then iteraties throw the new map to print out all of the tasks with the status header.
 	 */
 	
 	public void printTasksGroupedByStatus() {
@@ -81,7 +79,7 @@ public class TaskManager {
 
 		        // Step 3: Group tasks by status
 		        grouped.putIfAbsent(status, new ArrayList<>());
-		        grouped.get(status).add(task.getTaskInfo());
+		        grouped.get(status).add(task.toString());
 		    }
 
 		    // Step 4: Print tasks grouped by status
@@ -93,3 +91,4 @@ public class TaskManager {
 		
 	};}
 }
+
