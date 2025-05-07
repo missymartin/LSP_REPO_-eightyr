@@ -17,9 +17,10 @@ public class Task{
 		this.status = status;
     }
 
+    @Override
     
-    public String getTaskInfo() {
-    	return "Task{name='"+this.name+"', priority="+this.priority+", status='"+this.priority+"'}";
+    public String toString() {
+    	return "Task{name='"+this.name+"', priority="+this.priority+", status='"+this.status+"'}";
     	
     }
 }
